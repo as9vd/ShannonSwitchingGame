@@ -11,7 +11,7 @@ const Grid = () => {
             <>
               <button
                   key={colIndex}
-                  className={`col node ${colIndex + 1}`}
+                  className={`col node ${colIndex + 1} col${colIndex + 1}`}
               >
                   {buttonNumber}
               </button>
@@ -23,7 +23,7 @@ const Grid = () => {
             <>
               <button
                   key={colIndex}
-                  className={`col node ${colIndex + 1} item-2`}
+                  className={`col node ${colIndex + 1} item-2 col${colIndex + 1}`}
               >
                   {buttonNumber}
               </button>
@@ -40,21 +40,21 @@ const Grid = () => {
     for (let rowIndex = 0; rowIndex < 14; rowIndex++) {
         if (rowIndex % 2 == 0 && rowIndex != 0) {
             rows.push(
-                <div>
-                    <button>BOEN</button>
-                    <button>BOEN</button>
-                    <button>BOEN</button>
-                    <button>BOEN</button>
-                    <button>BOEN</button>
-                    <button>BOEN</button>
-                    <button>BOEN</button>
+                <div className={`row${rowIndex + 1}`}>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <button></button>
                 </div>
             );
         } else if (rowIndex == 0) {
             continue;
         } else {
             rows.push(
-                <div key={rowIndex} className={`row ${rowIndex + 1}`}>
+                <div key={rowIndex} className={`row ${rowIndex + 1} row${rowIndex + 1}`}>
                     {renderRow(rowIndex)}
                 </div>
             );
